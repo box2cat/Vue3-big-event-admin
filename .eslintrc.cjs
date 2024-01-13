@@ -12,8 +12,8 @@ module.exports = {
     ecmaVersion: 'latest'
   },
   rules: {
-    // 1.禁用格式化插件 prettier  format on save关闭
-    // 2.安装Eslint插件，并配置保存时自动修复
+    // 1.vscode扩展中，禁用安装的格式化插件 prettier，并关闭保存自动格式化
+    // 2.vscode扩展中，安装Eslint插件，并配置保存时自动修复
     'prettier/prettier': [
       'warn',
       {
@@ -33,5 +33,10 @@ module.exports = {
     'vue/no-setup-props-destructure': ['off'], // 关闭 props 解构的校验
     // 💡 添加未定义变量错误提示，create-vue@3.6.3 关闭，这里加上是为了支持下一个章节演示。
     'no-undef': 'error'
+  },
+  globals: {
+    ElMessage: 'readonly',
+    ElMessageBox: 'readonly',
+    ElLoading: 'readonly'
   }
 }
